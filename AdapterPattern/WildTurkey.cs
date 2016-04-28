@@ -1,6 +1,6 @@
 ﻿namespace AdapterPattern
 {
-    internal class WildTurkey : Interfaces.Turkey
+    public class WildTurkey : Interfaces.Turkey
     {
         public WildTurkey()
         {
@@ -9,12 +9,12 @@
 
         public string Fly()
         {
-            return "I'm flying!";
+            return "I'm flying a short distance!";
         }
 
         public string Gobble()
         {
-            return "Gobble";
+            return "Gobble, gobble";
         }
     }
 }

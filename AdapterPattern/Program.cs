@@ -1,32 +1,33 @@
-﻿namespace AdapterPattern
+﻿using AdapterPattern.Interfaces;
+
+namespace AdapterPattern
 {
-    class Program
+    public class DuckTestDrive
     {
-        public class DuckTestDrive
+        static void Main(string[] args)
         {
-            public static void main(string[] args)
-            {
-                MallardDuck duck = new MallardDuck();
+            MallardDuck duck = new MallardDuck();
 
-                WildTurkey turkey = new WildTurkey();
-                duck turkeyAdapter = new TurkeyAdapter(turkey);
+            WildTurkey turkey = new WildTurkey();
+            Duck turkeyAdapter = new TurkeyAdapter(turkey);
 
-                System.Console.WriteLine("The Turkey says...");
-                turkey.Gobble();
-                turkey.Fly();
+            System.Console.WriteLine("The Turkey says...");
+            System.Console.WriteLine(turkey.Gobble());
+            System.Console.WriteLine(turkey.Fly());
 
-                System.Console.WriteLine("\n The Duck says...");
-                testDuck(duck);
+            System.Console.WriteLine("\n The Duck says...");
+            testDuck(duck);
 
-                System.Console.WriteLine("\n The TurkeyAdapter says...");
-                testDuck(turkeyAdapter);
-            }
+            System.Console.WriteLine("\n The TurkeyAdapter says...");
+            testDuck(turkeyAdapter);
 
-            static void testDuck(Duck duck)
-            {
-                duck.quack();
-                duck.fly();
-            }
+            System.Console.ReadKey();
+        }
+
+        static void testDuck(Duck duck)
+        {
+            System.Console.WriteLine(duck.quack());
+            System.Console.WriteLine(duck.fly());
         }
     }
 }

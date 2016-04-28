@@ -1,4 +1,4 @@
-﻿using System;
+﻿using AdapterPattern.Interfaces;
 
 namespace AdapterPattern.Adapters
 {
